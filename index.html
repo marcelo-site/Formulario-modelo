@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulário modelo</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js" defer></script>
+</head>
+
+<body>
+
+  <form autocomplete="off">
+    <h2>FORMULÁRIO MODELO</h2>
+    <div class="input">
+      <label class="" for="name">Nome completo</label>
+      <input type="text" data-index="0" onblur="handleBlur(this)" onfocus="handleFocus(this)" id="name" />
+    </div>
+    <div class="grid-input">
+      <div class="input">
+        <label class="" for="tel">Telefone</label>
+        <input type="text" data-index="1" oninput="replaceStringToNumber(this)" onblur="handleBlur(this)"
+          onfocus="handleFocus(this)" id="tel" />
+      </div>
+      <div class="input">
+        <label class="" for="cel">Celular</label>
+        <input type="text" data-index="2" oninput="replaceStringToNumber(this)" onblur="handleBlur(this)"
+          onfocus="handleFocus(this)" id="cel" />
+      </div>
+    </div>
+    <div class="input">
+      <label class="" for="email">E-mail</label>
+      <input value="" required type="email" data-index="3" onblur="handleBlur(this)" onfocus="handleFocus(this)"
+        id="email" />
+    </div>
+    <div class="input">
+      <label class="" for="pass">Sua senha</label>
+      <input id="pass" type="password" data-index="4" onblur="handleBlur(this)" onfocus="handleFocus(this)" id="pass" />
+      <span class="eye-pass" onclick="togglePassword(this)">
+        <span>
+          <img src="svg/eye-fill.svg" id="showpass" alt="" />
+          <img src="svg/eye-slash-fill.svg" id="hidepass" style="display: none" alt="" />
+        </span>
+      </span>
+    </div>
+    <div class="input textarea" id="">
+      <label for="message">Mensagem</label>
+      <textarea data-index="5" onblur="handleBlur(this)" onfocus="handleFocus(this)" id="message" cols="40"
+        rows="10"></textarea>
+    </div>
+    <input type="submit" value="Enviar" />
+  </form>
+
+</body>
+
+</html>

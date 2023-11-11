@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    color: #262626;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 5vh;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fcfcfc;
+  }
+
+  form > div {
+    margin: 10px 0;
+  }
+
+  form h1,
+  form h2 {
+    border-left: 3px solid;
+    padding-left: 5px;
+    margin: 0 0 1em;
+  }
+
+  div.input {
+    height: 40px;
+    width: 400px;
+    position: relative;
+  }
+
+  div.textarea {
+    /* 100% quebrou com resize true */
+    /* height: 100%; */
+    min-height: 200px;
+  }
+
+  div.textarea textarea {
+    resize: none;
+    height: 100%;
+  }
+
+  label {
+    background-color: white;
+    font-size: 1.2em;
+    position: absolute;
+    left: 5px;
+    top: calc(50% - 14px);
+    padding: 0px 0.5em;
+    pointer-events: none;
+    transition: all 300ms ease-in-out;
+    color: #575757;
+  }
+
+  .textarea label {
+    top: 10px;
+  }
+
+  input,
+  textarea {
+    background-color: white;
+    width: 400px;
+    height: 100%;
+    padding: 0.8rem 0.5rem 0.35rem;
+    font-size: 1em;
+    outline: none;
+    border: 1px solid gray;
+  }
+
+  input {
+    padding-right: 0;
+  }
+
+  div.input:has(> input:focus) label,
+  label.focus,
+  div.input:has(> textarea:focus) label {
+    top: -5px;
+    left: 0.9em;
+    font-size: 1em;
+    color: blue;
+  }
+
+  input:focus,
+  textarea:focus,
+  label.focus~input,
+  label.focus~textarea {
+    height: calc(100% - 5px) !important;
+    margin-top: 5px;
+  }
+
+  div.grid-input {
+    display: grid;
+    grid-template-columns: 200px 200px;
+    width: 400px;
+    gap: 5px;
+  }
+
+  .grid-input .input input {
+    width: 195px;
+  }
+
+  .eye-pass {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 1.5rem;
+    height: 100%;
+    width: 1.5rem;
+    z-index: 200;
+  }
+
+  label.focus~.eye-pass,
+  input:focus~.eye-pass {
+    z-index: 200;
+  }
+
+  .eye-pass span {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 5px;
+  }
+
+  .eye-pass img {
+    width: 100%;
+  }
+
+  input:focus~span.eye-pass,
+  label.focus~span.eye-pass {
+    top: 4px;
+  }
+
+  input[type="submit"] {
+    height: 40px;
+    width: 40%;
+    background-color: white;
+    border: 1px solid black;
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+    padding: 5px;
+    transition: all 300ms ease-in-out;
+  }
+
+  input[type="submit"]:hover {
+    background-color: black;
+    color: white;
+  }
